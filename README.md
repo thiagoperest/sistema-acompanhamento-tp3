@@ -36,7 +36,7 @@ O sistema foi modelado seguindo princípios de orientação a objetos, com separ
 ## Como Executar
 
 ### Pré-requisitos
-- Java 17 ou superior
+- Java 8 ou superior
 - Maven 3.8 ou superior
 
 ### Execução
@@ -45,7 +45,16 @@ O sistema foi modelado seguindo princípios de orientação a objetos, com separ
    ```bash
    git clone https://github.com/thiagoperest/sistema-acompanhamento-tp3.git
    cd sistema-acompanhamento-tp3
-   mvn clean compile
+   ```
+
+2. **Execute a aplicação:**
+   ```bash
+   java -cp target/classes br.edu.infnet.Main
+   ```
+
+3. **Para usar com dados CSV:**
+   ```bash
+   java -cp target/classes br.edu.infnet.Main ./data
    ```
 
 ### Login de Teste
