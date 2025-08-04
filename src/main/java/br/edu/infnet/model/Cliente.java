@@ -13,7 +13,6 @@ public class Cliente {
     private String endereco;
     private LocalDateTime dataCadastro;
     private List<Pedido> pedidos;
-    private PreferenciasNotificacao preferenciasNotificacao;
 
     public Cliente() {
         this.pedidos = new ArrayList<>();
@@ -89,14 +88,6 @@ public class Cliente {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
-    }
-
-    public PreferenciasNotificacao getPreferenciasNotificacao() {
-        return preferenciasNotificacao;
-    }
-
-    public void setPreferenciasNotificacao(PreferenciasNotificacao preferenciasNotificacao) {
-        this.preferenciasNotificacao = preferenciasNotificacao;
     }
 
     public void adicionarPedido(Pedido pedido) {

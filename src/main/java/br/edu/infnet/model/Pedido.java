@@ -15,12 +15,10 @@ public class Pedido {
     private String codigoRastreamento;
     private Cliente cliente;
     private List<StatusPedido> historicoStatus;
-    private List<Notificacao> notificacoes;
     private Avaliacao avaliacao;
 
     public Pedido() {
         this.historicoStatus = new ArrayList<>();
-        this.notificacoes = new ArrayList<>();
         this.dataCompra = LocalDateTime.now();
     }
 
@@ -103,14 +101,6 @@ public class Pedido {
         this.historicoStatus = historicoStatus;
     }
 
-    public List<Notificacao> getNotificacoes() {
-        return notificacoes;
-    }
-
-    public void setNotificacoes(List<Notificacao> notificacoes) {
-        this.notificacoes = notificacoes;
-    }
-
     public Avaliacao getAvaliacao() {
         return avaliacao;
     }
@@ -120,14 +110,11 @@ public class Pedido {
     }
 
     public void atualizarStatus(StatusPedido novoStatus) {
-        this.historicoStatus.add(this.statusAtual);
+        if (this.statusAtual != null) {
+            this.historicoStatus.add(this.statusAtual);
+        }
         this.statusAtual = novoStatus;
         novoStatus.setPedido(this);
-    }
-
-    public void adicionarNotificacao(Notificacao notificacao) {
-        this.notificacoes.add(notificacao);
-        notificacao.setPedido(this);
     }
 
     public boolean isEntregue() {
